@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Delete";
+}
+
+<h4>DELETE</h4>
+
+<br />
+<br />
+<h3>Are you sure you want to delete ROLE- @ViewBag.ID?</h3>
+<br />
+<br />
+
+@using (Html.BeginForm("DeleteRole", "UserAdministration", new { id = ViewBag.ID }))
+{
+    <input type="submit" value="Delete" class="btn-danger" />
+}

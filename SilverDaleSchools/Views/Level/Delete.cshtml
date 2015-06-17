@@ -1,0 +1,44 @@
+﻿@model SilverDaleSchools.Model.Level
+@{
+    ViewBag.Title = "Delete";
+   // Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+@*<h3>DELETE A CLASS</h3>*@
+
+<h5>Are you sure you want to delete class  @Model.LevelName ?</h5>
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>@Model.LevelName</legend>
+        @Html.HiddenFor(model => model.LevelID)
+
+        <div class="display-field">
+            <b>@Html.DisplayNameFor(model => model.LevelName):</b>  @Html.DisplayFor(model => model.LevelName)
+        </div>
+
+        @*<div class="display-field">
+            <b>@Html.DisplayNameFor(model => model.Type):</b>  @Html.DisplayFor(model => model.Type)
+        </div>*@
+    </fieldset>
+
+    
+    <input type="submit" value="Delete" id="button" class="btn-danger" />
+    <br />
+    <br />
+    <p id="button2">
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        //$("#button").button();
+        //$("#button2").button();
+        //$("#button3").button();
+
+        //$("#tabs").tabs().width("750px");
+        //$("#tabs1").tabs().width("750px");
+
+    </script>
+}

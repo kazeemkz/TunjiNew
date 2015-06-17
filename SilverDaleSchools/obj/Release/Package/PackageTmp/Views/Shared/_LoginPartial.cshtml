@@ -1,0 +1,63 @@
+﻿<div class="btn-group pull-right">
+    @if (Request.IsAuthenticated)
+    {
+        string theName = null; //theParent.LastName.ToUpper(); //+ " " + thePerson.FirstName.ToUpper() + " " + "!";
+
+        SilverDaleSchools.DAL.UnitOfWork work = new SilverDaleSchools.DAL.UnitOfWork();
+        string theUser = User.Identity.Name;
+        Int32 userInt = Convert.ToInt32(theUser);
+        //SilverDaleSchools.Model.Person thePerson = work.PersonRepository.Get(a => a.UserID == theUser).First();
+
+        //List<SilverDaleSchools.Model.Student> theStudent = work.StudentRepository.Get(a => a.UserID == theUser).ToList();
+        List<SilverDaleSchools.Model.Person> theStaff = work.PersonRepository.Get(a => a.UserID == userInt).ToList();
+        //if (theStudent.Count() != 0)
+        //{
+        //    theName = theStudent[0].LastName.ToUpper();
+        //}
+        if (theStaff.Count() != 0)
+        {
+            theName = theStaff[0].LastName.ToUpper();
+        }
+        else
+        {
+            theName = "GUEST";
+        }
+        // theName = thePerson.LastName.ToUpper();
+        //+ " " + thePerson.FirstName.ToUpper() + " " + "!";
+
+
+    <a style="background-color:#00ff90" class="btn dropdown-header" data-toggle="dropdown" href="#"><i class="icon-user"></i> <b>Hello, @theName</b><span class="caret"></span></a>
+
+    <ul class="dropdown-menu" role="menu">
+        <li role="menuitem">@Html.ActionLink("Change Password", "ChangePassword", "Account", routeValues: null, htmlAttributes: new { title = "Change password" })</li>
+        <li class="divider"></li>
+        <li>@Html.ActionLink("Log off", "LogOff", "Account")</li>
+
+        @*   @Html.ActionLink("Logout", "LogOff", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Logout" })*@
+        @*@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <li role="menuitem">
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                </li>
+            }*@
+    </ul>
+    }
+    else
+    {
+
+    <a style="background-color:#ffd800 " class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i>Login <span class="caret"></span></a>
+
+    <ul class="dropdown-menu" role="menu">
+
+        <li role="menuitem">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li class="divider"></li>
+        @*<li role="menuitem">@Html.ActionLink("Primary School Registration", "ValidateCode", "PrimarySchoolStudent")</li>
+
+            <li class="divider"></li>
+            <li role="menuitem">@Html.ActionLink("Secondary School Registration", "ValidateCode", "SecondarySchoolStudent")</li>*@
+
+        <li class="divider"></li>
+    </ul>
+    }
+</div>

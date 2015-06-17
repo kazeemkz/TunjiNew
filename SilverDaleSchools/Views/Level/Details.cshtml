@@ -1,0 +1,38 @@
+﻿@model SilverDaleSchools.Model.Level
+@{
+    ViewBag.Title = "Details";
+   // Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+<h3>CLASS DETAILS</h3>
+
+<fieldset>
+    <legend>@Model.LevelName</legend>
+
+
+    <div class="display-field">
+        <b>@Html.DisplayNameFor(model => model.LevelName):</b>  @Html.DisplayFor(model => model.LevelName)
+    </div>
+
+
+    @*<div class="display-field">
+        <b>@Html.DisplayNameFor(model => model.Type):</b>  @Html.DisplayFor(model => model.Type)
+    </div>*@
+</fieldset>
+<div id="button2">
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.LevelID })
+    </p>
+  <br />
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        //$("#button2").button();
+        //$("#tabs").tabs().width("450px");
+        //$("#accordion").accordion().width("235px");
+    </script>
+}

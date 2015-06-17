@@ -1,0 +1,79 @@
+﻿@model SilverDaleSchools.Model.Level
+
+@{
+    ViewBag.Title = "Create";
+    //Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+@*<h3>CLASS CREATION</h3>*@
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+       <div class="form-horizontal">
+           <hr />
+    <fieldset>
+        <legend>CREATE CLASS</legend>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LevelName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.LevelName, SilverDaleSchools.Model.LevelDictionary.ClasssListSilverDale)
+                @*@Html.TextBoxFor(model => model.LevelName)*@
+                @Html.ValidationMessageFor(model => model.LevelName)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Type, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Type)
+                @Html.ValidationMessageFor(model => model.Type)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.ClassDescription, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ClassDescription, SilverDaleSchools.Model.LevelDictionary.LevelDicoList)
+                @Html.ValidationMessageFor(model => model.ClassDescription)
+            </div>
+        </div>*@
+
+
+
+
+
+        @*<div class="editor-label">
+           <text><b> Class Name </b></text>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.LevelName, SilverDaleSchools.Model.LevelDictionary.LevelDicoList)
+            @Html.ValidationMessageFor(model => model.LevelName)
+        </div>
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.Type)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Type, SilverDaleSchools.Model.LevelDictionary.LevelTypeList)
+            @Html.ValidationMessageFor(model => model.LevelName)
+        </div>*@
+
+        <p>
+            <input type="submit" value="Create" id="button" class="btn-primary" />
+        </p>
+    </fieldset>
+           </div>
+}
+
+<div id="button2">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+    
+    </script>
+}

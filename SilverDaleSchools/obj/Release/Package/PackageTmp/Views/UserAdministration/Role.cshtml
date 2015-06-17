@@ -1,0 +1,75 @@
+@model SilverDaleSchools.Models.RoleViewModel
+@{
+    ViewBag.Title = "Role: " + Model.Role;
+   // Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+    // Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<link href='@Url.Content("~/Content/MvcMembership.css")' rel="stylesheet" type="text/css" />
+
+<h2 class="mvcMembership">Role: @Model.Role</h2>
+<div class="mvcMembership-roleUsers">
+
+   <table class="table table-striped table-hover table-bordered table-condensed">
+        <tr>
+            <th>User Name</th>
+            <th>Action</th>
+
+        </tr>
+
+        @if (Model.Users.Count() > 0)
+        {
+
+            foreach (var key in Model.Users.Keys)
+            {
+                var user = Model.Users[key];
+
+                if (user == null)
+                {
+            <span>@key <em>(Deleted)</em></span>
+                }
+                if (user.UserName == "5000001" || user.UserName == "kazeemkz")
+                {
+                    
+                }
+                else
+                {
+            <tr>
+                <td>
+                    @Html.ActionLink(user.UserName, "Details", new { id = user.ProviderUserKey })
+                </td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromRole", "UserAdministration", new
+                    {
+                        id = user.ProviderUserKey,
+                        role = Model.Role
+                    }))
+                    {
+                        <input type="submit" value="Remove From" class="btn-primary" />
+                    }
+                </td>
+            </tr>
+                }
+
+            }
+
+        }
+        else
+        {
+            <p>No users are in this role.</p>
+        }
+    </table>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        //$("#tabs").tabs().width("450px");
+        //$("#accordion").accordion().width("235px");
+
+
+
+        //$("#tabs1").tabs().width("750px");
+
+    </script>
+}

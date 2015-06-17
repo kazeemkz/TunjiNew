@@ -1,0 +1,29 @@
+﻿@model SilverDaleSchools.Model.Subject
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+<h3>SUBJECT DETAILS</h3>
+
+<fieldset>
+    <legend>@Model.Name</legend>
+
+
+    <div class="display-field">
+        <b>@Html.DisplayNameFor(model => model.Name):</b>  @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<div id="button2">
+
+    <p>@Html.ActionLink("Edit", "Edit", new { id = Model.SubjectID }) </p>
+    <p>@Html.ActionLink("Back to List", "Index")</p>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        //$("#button2").button();
+        //$("#tabs").tabs().width("450px");
+        //$("#accordion").accordion().width("235px");
+    </script>
+}

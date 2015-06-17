@@ -1,0 +1,44 @@
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.DAL.dll.config
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.DAL.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.DAL.pdb
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\EntityFramework.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\log4net.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\MvcMembership.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\PagedList.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\Remotion.Data.Linq.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\Remotion.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\Remotion.Interfaces.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.Model.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\System.Web.Providers.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.Model.pdb
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\EntityFramework.xml
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\MvcMembership.pdb
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\MvcMembership.xml
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\bin\Release\PagedList.xml
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\obj\Release\SilverDaleSchools.DAL.csprojResolveAssemblyReference.cache
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\obj\Release\SilverDaleSchools.DAL.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.DAL\obj\Release\SilverDaleSchools.DAL.pdb
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.DAL.dll.config
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.DAL.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.DAL.pdb
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\EntityFramework.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\log4net.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\MvcMembership.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\PagedList.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\Remotion.Data.Linq.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\Remotion.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\Remotion.Interfaces.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.Model.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\System.Web.Providers.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\SilverDaleSchools.Model.pdb
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\EntityFramework.xml
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\MvcMembership.pdb
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\MvcMembership.xml
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\bin\Release\PagedList.xml
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\obj\Release\SilverDaleSchools.DAL.csprojResolveAssemblyReference.cache
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\obj\Release\SilverDaleSchools.DAL.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\obj\Release\SilverDaleSchools.DAL.pdb

@@ -1,0 +1,66 @@
+﻿@model SilverDaleSchools.Model.SubjectRegistration
+
+@{
+    ViewBag.Title = "Edit";
+   // Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+<h4> COURSES FOR @Model.UserID</h4>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Edit Assigned Courses to @Model.UserID</legend>
+
+        @Html.HiddenFor(model => model.SubjectRegistrationID)
+
+       
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.UserID)
+            @Html.ValidationMessageFor(model => model.UserID)
+        </div>
+        <text><b>Class:</b></text>
+
+         <table style="width: 100%">
+                <tr>
+                    @{
+                        int cnt = 0;
+                        List<SilverDaleSchools.Models.AssignedSubjectData> courses = ViewBag.Courses;
+
+                        foreach (var course in courses) {
+                            if (cnt++ % 3 == 0) {
+                                @:  </tr> <tr> 
+                            }
+                            @: <td> 
+                                <input type="checkbox" 
+                                       name="selectedCourses" 
+                                       value="@course.SubjectID" 
+                                       @(Html.Raw(course.Assigned ? "checked=\"checked\"" : "")) /> 
+                                @course.SubjectID @:&nbsp; @course.Name
+                            @:</td>
+                        }
+                        @: </tr>
+                    }
+            </table>
+
+        <p>
+            <input type="submit" value="Save"  id="button" class="btn-primary"/>
+        </p>
+    </fieldset>
+}
+
+<div id="button2">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        //$("#button").button();
+        //$("#button2").button();
+        //$("#tabs").tabs().width("450px");
+        //$("#accordion").accordion().width("235px");
+
+    </script>
+}

@@ -1,0 +1,158 @@
+﻿@model SilverDaleSchools.Model.Student
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@*<h2>Edit</h2>*@
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend></legend>
+        <div class="form-horizontal">
+            <h5>EDIT STUDENT INFORMATION</h5>
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName)
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.UserID, new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.UserID)
+                    @Html.ValidationMessageFor(model => model.UserID)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Middle, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Middle)
+                    @Html.ValidationMessageFor(model => model.Middle)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName)
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sex, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Sex, SilverDaleSchools.Model.SexDictionary.SexDicoList)
+                    @Html.ValidationMessageFor(model => model.Sex)
+                </div>
+            </div>
+            @Html.HiddenFor(model => model.Role)
+            
+
+            @Html.HiddenFor(model => model.StudentID)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PhoneNumber)
+                    @Html.ValidationMessageFor(model => model.PhoneNumber)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EmailAddress, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EmailAddress)
+                    @Html.ValidationMessageFor(model => model.EmailAddress)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ParentName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ParentName)
+                    @Html.ValidationMessageFor(model => model.ParentName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ParentAddress, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ParentAddress)
+                    @Html.ValidationMessageFor(model => model.ParentAddress)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ParentPhoneNumber, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ParentPhoneNumber)
+                    @Html.ValidationMessageFor(model => model.ParentPhoneNumber)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LGAName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LGAName)
+                    @Html.ValidationMessageFor(model => model.LGAName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.StateName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.StateName)
+                    @Html.ValidationMessageFor(model => model.StateName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CountryName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CountryName)
+                    @Html.ValidationMessageFor(model => model.CountryName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LocalLanguageName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LocalLanguageName)
+                    @Html.ValidationMessageFor(model => model.LocalLanguageName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

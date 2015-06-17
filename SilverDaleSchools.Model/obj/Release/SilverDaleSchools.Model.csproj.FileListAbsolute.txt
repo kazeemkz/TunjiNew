@@ -1,0 +1,19 @@
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\bin\Release\SilverDaleSchools.Model.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\bin\Release\SilverDaleSchools.Model.pdb
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\bin\Release\log4net.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\bin\Release\Remotion.Data.Linq.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\bin\Release\Remotion.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\bin\Release\Remotion.Interfaces.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\bin\Release\System.Web.Mvc.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\obj\Release\SilverDaleSchools.Model.csprojResolveAssemblyReference.cache
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\obj\Release\SilverDaleSchools.Model.dll
+C:\Project\Silverdaleschoolslagos\SilverDaleSchools\silverdale\SilverDaleSchools.Model\obj\Release\SilverDaleSchools.Model.pdb
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\bin\Release\SilverDaleSchools.Model.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\bin\Release\SilverDaleSchools.Model.pdb
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\bin\Release\log4net.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\bin\Release\Remotion.Data.Linq.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\bin\Release\Remotion.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\bin\Release\Remotion.Interfaces.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\obj\Release\SilverDaleSchools.Model.csprojResolveAssemblyReference.cache
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\obj\Release\SilverDaleSchools.Model.dll
+C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.Model\obj\Release\SilverDaleSchools.Model.pdb

@@ -1,0 +1,180 @@
+﻿@model SilverDaleSchools.Model.Person
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>CREATE NEW STAFF</legend>
+        <div class="form-horizontal">
+            @*<h4>Staff</h4>*@
+            <hr />
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName)
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+            </div>
+
+          
+            <div class="form-group">
+                @Html.LabelFor(model => model.MiddleName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MiddleName)
+                    @Html.ValidationMessageFor(model => model.MiddleName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName)
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+            </div>
+
+            <div class="form-group">
+            @Html.LabelFor(model => model.UserID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserID)
+                @Html.ValidationMessageFor(model => model.UserID)
+            </div>
+        </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+            </div>
+
+
+
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model..DOB, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DOB)
+                    @Html.ValidationMessageFor(model => model.DOB)
+                </div>
+            </div>*@
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sex, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Sex, SilverDaleSchools.Model.SexDictionary.SexDicoList)
+                    @Html.ValidationMessageFor(model => model.Sex)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Role, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Role, new SelectList((System.Collections.IEnumerable)ViewData["Role"], "Value", "Text"))
+                    @Html.ValidationMessageFor(model => model.Role)
+                </div>
+            </div>
+          
+                    
+          
+          
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.ApprovedUserName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ApprovedUserName)
+                    @Html.ValidationMessageFor(model => model.ApprovedUserName)
+                </div>
+            </div>*@
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.DateApproved, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DateApproved)
+                    @Html.ValidationMessageFor(model => model.DateApproved)
+                </div>
+            </div>*@
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.PlaceOfBirth, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PlaceOfBirth)
+                    @Html.ValidationMessageFor(model => model.PlaceOfBirth)
+                </div>
+            </div>*@
+
+        
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.SubjectStrength, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SubjectStrength)
+                    @Html.ValidationMessageFor(model => model.SubjectStrength)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClassTeacherOf, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClassTeacherOf)
+                    @Html.ValidationMessageFor(model => model.ClassTeacherOf)
+                </div>
+            </div>*@
+
+           
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.HightestQualification, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HightestQualification)
+                    @Html.ValidationMessageFor(model => model.HightestQualification)
+                </div>
+            </div>*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+<script>
+
+  
+    //$("#tabs").tabs().width("450px");
+    //$("#accordion").accordion().width("235px");
+
+    $("#EnrollmentDate").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        //dateFormat: 'dd/mm/yy',
+        gotoCurrent: true
+    });
+    $("#DOB").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        //dateFormat: 'dd/mm/yy',
+        gotoCurrent: true
+    });
+</script>
+
+}

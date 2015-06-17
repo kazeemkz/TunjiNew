@@ -1,0 +1,70 @@
+﻿@model SilverDaleSchools.Model.Level
+
+@{
+    ViewBag.Title = "Edit";
+   // Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+<h4>EDIT CLASS</h4>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+      @Html.HiddenFor(model => model.LevelID)
+    
+      <fieldset>
+        <legend></legend>
+        <div class="form-horizontal">
+            <h5>EDIT CLASS</h5>
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.LabelFor(model => model.LevelName, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                  @Html.DropDownListFor(model => model.LevelName, SilverDaleSchools.Model.LevelDictionary.ClasssListSilverDale)
+                    @Html.ValidationMessageFor(model => model.LevelName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Type, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                  @Html.EditorFor(model => model.Type)
+@Html.ValidationMessageFor(model => model.Type)
+                </div>
+            </div>
+
+           
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+           
+        </div>
+         
+    </fieldset>
+    
+    
+        
+
+       
+  
+}
+
+<div id="button2">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+     //   $("#button").button();
+     //   $("#button2").button();
+     //   $("#button3").button();
+
+     ////   $("#button2").button();
+     //   $("#tabs").tabs().width("450px");
+     //   $("#accordion").accordion().width("235px");
+
+    </script>
+}

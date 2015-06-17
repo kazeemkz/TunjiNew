@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" style="background-color: #faf2f2">
+
+
+    @*<div class="span11">
+            <img src="~/Images/silverdale.jpg" />
+        </div>*@
+    
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <h3>ABUAD DISCUSSION BOARD -FACULTY OF ENGINEERING </h3>
+                @*<p ><img src="~/Images/silverdale.jpg" style="height: 70px; width:350px; align-items: center" /></p>*@
+            </div>
+         
+            </div>
+        </div>
+      
+
+    <div id="imager" class="col-md-12" style="height: 350px; align-items: center">
+        <img src="/Images/images (51).jpg" alt="" />
+        <img src="/Images/images (3).jpg" alt="" />
+        <img src="/Images/images (44).jpg" alt="" />
+        @*<img src="/Images/n4.jpg" alt="" />
+        <img src="/Images/n5.jpg" alt="" />
+        <img src="/Images/n6.jpeg" alt="" />
+      
+        <img src="/Images/n8.jpeg" alt="" />
+        <img src="/Images/n9.jpg" alt="" />
+        <img src="/Images/n10.jpg" alt="" />
+        <img src="/Images/n11.jpg" alt="" />
+        <img src="/Images/n12.jpg" alt="" />
+        <img src="/Images/n13.jpg" alt="" />
+        <img src="/Images/n14.jpg" alt="" />
+      
+        <img src="/Images/n16.jpg" alt="" />*@
+    </div>
+        </div>
+
+       
+        @section Scripts{
+            @* <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+                <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+                @Scripts.Render("~/bundles/jqueryval")*@
+            <script src="~/Scripts/jquery.slides.min.js"></script>
+            @*<script src="~/Scripts/jquery.cycle.all.js"></script>*@
+            <script type="text/javascript">
+                $(function () {
+
+                    $(function () {
+                        $("#imager").slidesjs({
+                            play: {
+                                active: false,
+                                // [boolean] Generate the play and stop buttons.
+                                // You cannot use your own buttons. Sorry.
+                                effect: "slide",
+                                // [string] Can be either "slide" or "fade".
+                                interval: 5000,
+                                // [number] Time spent on each slide in milliseconds.
+                                auto: true,
+                                // [boolean] Start playing the slideshow on load.
+                                swap: true,
+                                // [boolean] show/hide stop and play buttons
+                                pauseOnHover: false,
+                                // [boolean] pause a playing slideshow on hover
+                                restartDelay: 2500
+                                // [number] restart delay on inactive slideshow
+                            }
+                        });
+                    });
+                    //jQuery('#imager').cycle({ fx: 'fade', timeout: 5000, speed: 1000 });
+                    //$("#imager").backstretch([
+                    //    "/Images/image1home.jpg",
+                    //     "/Images/studystudents.jpg",
+                    //      "/Images/image3home.jpg",
+                    //       "/Images/image4home.jpg",
+                    //        "/Images/images (11).jpg",
+                    //        "/Images/image5home.jpg",
+                    //], { duration: 5000, fade: 3000 });
+
+
+
+
+                });
+            </script>
+        }

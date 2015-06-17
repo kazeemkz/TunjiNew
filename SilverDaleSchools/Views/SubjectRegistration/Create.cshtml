@@ -1,0 +1,82 @@
+﻿@model SilverDaleSchools.Models.SubRegistrationViewModel
+@{
+    ViewBag.Title = "Create";
+    //Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+   // Layout = "~/Views/Shared/_Layout3.cshtml"; 
+}
+
+<h3>REGISTER STUDENT/STAFF TO COURSES</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Register Student/Staff to Courses</legend>
+
+        <div class="editor-label">
+          <text><b>Enter Student/Staff ID</b></text>
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.UserID)
+            @*@Html.DropDownListFor(model => model.UserID, SilverDaleSchools.Model.LevelDictionary.LevelDicoListWithoutNone)*@
+            @Html.ValidationMessageFor(model => model.UserID)
+        </div>
+
+        @*<div class="editor-label">
+            <text><b>Select a Subject</b></text>
+        </div>*@
+        <div></div>
+        <div class="editor-field">
+            @Html.CheckBoxListFor(x => x.SubjectRegistration,
+
+
+                      x => x.Subjects,
+                       x => x.Name,
+                       x => x.Name,
+                      x => x.SubjectRegistration.Subjects,
+                       new MvcCheckBoxList.Model.HtmlListInfo(MvcCheckBoxList.Model.HtmlTag.table, 0, null, MvcCheckBoxList.Model.TextLayout.RightToLeft))
+            @* @Html.DropDownListFor(model => model.Subjects, new SelectList((System.Collections.IEnumerable)ViewBag.Subjects, "Value", "Text"))
+            @Html.ValidationMessageFor(model => model.Level)*@
+        </div>
+
+         @*<table>
+            <tr>
+                <th>
+                   <text><b>Select Subjects for Class</b></text>
+                </th>
+                <th></th>
+            </tr>*@
+
+            @*  @foreach (SchoolManagement.Model.Subject item in ViewBag.Subject as List<schoolmanagement.model.subject>)
+            {
+                *@<tr>
+                    <td>@* @Html.CheckBox(item.Name,false)<b>@item.Name</b>*@
+
+                      @* @Html.CheckBoxFor(x=>x.Selected)
+                    </td>
+
+                </tr>
+            }
+        </table>*@
+
+        <p>
+            <input type="submit" value="Create" class="btn-primary" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+ @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        //$("#button").button();
+        //$("#button2").button();
+        //$("#tabs").tabs().width("450px");
+        //$("#accordion").accordion().width("235px");
+
+    </script>
+}

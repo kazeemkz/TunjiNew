@@ -1,0 +1,152 @@
+﻿@model SilverDaleSchools.Model.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@*<h2>Details</h2>*@
+<fieldset>
+    <legend>@Model.LastName's  Details</legend>
+   
+      
+        <hr />
+
+        <dl class="dl-horizontal">
+
+            <dt>
+                <b>Student ID</b>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserID)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Middle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Middle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sex)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sex)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Role)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Role)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmailAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ParentName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ParentName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ParentAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ParentAddress)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ParentPhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ParentPhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LGAName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LGAName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StateName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StateName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CountryName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CountryName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LocalLanguageName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LocalLanguageName)
+            </dd>
+
+        </dl>
+</fieldset>
+    
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

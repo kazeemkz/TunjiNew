@@ -1,0 +1,1630 @@
+﻿@model SilverDaleSchools.Model.Result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@*<h2>Details</h2>*@
+<style type="text/css">
+    dl.dt {
+        width: 0px;
+    }
+</style>
+<fieldset>
+    <legend></legend>
+    <div>
+        <h4> @Model.Surname RESULT DETAILS</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.StudentNo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StudentNo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Session)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Session)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Term)
+            </dt>
+            @if (Model.Term == "1")
+            {
+                <dd>
+                    <b>First</b>
+                </dd>
+            }
+            @if (Model.Term == "2")
+            {
+                <dd>
+                    <b>Second</b>
+                </dd>
+            }
+            @if (Model.Term == "3")
+            {
+                <dd>
+                    <b>Third</b>
+                </dd>
+            }
+
+
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Class)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Class)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Surname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Surname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Firstname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Othernames)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Othernames)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sex)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sex)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoofTimesSchoolOpened)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoofTimesSchoolOpened)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoofTimesPresent)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoofTimesPresent)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoofTimesPunctual)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoofTimesPunctual)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoofTimesAbsent)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoofTimesAbsent)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fluency)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fluency)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Games)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Games)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sports)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sports)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HandlingofTools)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HandlingofTools)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MusicalSkills)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MusicalSkills)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AttentiveandWorkIndependently)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AttentiveandWorkIndependently)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DoesHomeworkRegularly)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DoesHomeworkRegularly)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsNeatandOrderly)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsNeatandOrderly)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Respectauthority)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Respectauthority)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TakeCareofBooksandProperty)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TakeCareofBooksandProperty)
+            </dd>
+
+            @*<dt>
+                @Html.DisplayNameFor(model => model.FormMastersComments)
+            </dt>*@
+            <hr />
+            <fieldset>
+                <legend>Form Master's Comments</legend>
+                @Html.DisplayFor(model => model.FormMastersComments)
+            </fieldset>
+            @*<dd>
+                @Html.DisplayFor(model => model.FormMastersComments)
+            </dd>*@
+
+            @*<dt>
+                @Html.DisplayNameFor(model => model.PrincipalsComment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PrincipalsComment)
+            </dd>*@
+
+            <hr />
+            <fieldset>
+                <legend>Form Principals Comments</legend>
+                @Html.DisplayFor(model => model.PrincipalsComment)
+            </fieldset>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalScoreObtainable)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalScoreObtainable)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalScoreObtained)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalScoreObtained)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Percentage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Percentage)
+            </dd>
+
+        </dl>
+
+      
+            <fieldset>
+
+                <legend>SUBJECT SCORES</legend>
+
+                @if (Model.EnglishLanguage_Attendance > 0)
+
+                { 
+                <dt>
+                    @Html.DisplayNameFor(model => model.EnglishLanguage_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EnglishLanguage_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EnglishLanguage_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EnglishLanguage_ContinuousAssessment)
+                </dd>
+              
+                <dt>
+                    @Html.DisplayNameFor(model => model.EnglishLanguage_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EnglishLanguage_ExaminationScore)
+                </dd>
+
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EnglishLanguage_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EnglishLanguage_TotalScore)
+                </dd>
+
+                    <hr />
+                      }
+                
+                
+
+
+@if (Model.Yoruba_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Yoruba_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Yoruba_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Yoruba_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Yoruba_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Yoruba_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Yoruba_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Yoruba_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Yoruba_TotalScore)
+                </dd>
+    <hr />
+} 
+                
+
+
+
+@if (Model.French_Attendance > 0)
+
+                {
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.French_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.French_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.French_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.French_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.French_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.French_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.French_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.French_TotalScore)
+                </dd>
+
+    <hr />
+    
+}
+
+
+
+
+
+
+
+@if (Model.LiteratureinEnglish_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.LiteratureinEnglish_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LiteratureinEnglish_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LiteratureinEnglish_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LiteratureinEnglish_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LiteratureinEnglish_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LiteratureinEnglish_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LiteratureinEnglish_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LiteratureinEnglish_TotalScore)
+                </dd>
+
+    <hr />
+}
+
+              @if (Model.Igbo_Attendance> 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Igbo_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Igbo_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Igbo_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Igbo_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Igbo_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Igbo_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Igbo_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Igbo_TotalScore)
+                </dd>
+
+                  
+                  <hr />
+                  
+              }
+              
+@if (Model.Hausa_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Hausa_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Hausa_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Hausa_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Hausa_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Hausa_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Hausa_ExaminationScore)
+                </dd>
+    
+      <dt>
+                    @Html.DisplayNameFor(model => model.Hausa_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Hausa_TotalScore)
+                </dd>
+    <hr />
+    
+}
+
+
+@if (Model.Physics_Attendance > 0)
+
+                {
+
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Physics_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Physics_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Physics_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Physics_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Physics_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Physics_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Physics_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Physics_TotalScore)
+                </dd>
+    <hr />
+}
+
+@if (Model.Chemistry_Attendance> 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Chemistry_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Chemistry_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Chemistry_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Chemistry_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Chemistry_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Chemistry_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Chemistry_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Chemistry_TotalScore)
+                </dd>
+
+    
+    <hr />
+}
+
+@if (Model.Biology_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Biology_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Biology_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Biology_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Biology_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Biology_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Biology_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Biology_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Biology_TotalScore)
+                </dd>
+    <hr />
+}
+
+@if (Model.Commerce_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Computer_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Computer_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Computer_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Computer_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Computer_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Computer_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Computer_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Computer_TotalScore)
+                </dd>
+
+    
+    <hr />
+    
+}
+
+
+@if (Model.PhysicalHealthEducation_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhysicalHealthEducation_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhysicalHealthEducation_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhysicalHealthEducation_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhysicalHealthEducation_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhysicalHealthEducation_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhysicalHealthEducation_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhysicalHealthEducation_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhysicalHealthEducation_TotalScore)
+                </dd>
+
+    
+    <hr />
+    
+    
+}
+
+
+                @if (Model.Mathematics_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mathematics_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Mathematics_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mathematics_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Mathematics_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mathematics_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Mathematics_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mathematics_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Mathematics_TotalScore)
+                </dd>
+
+                    
+                    <hr />
+                    
+                    
+                }
+                
+
+
+
+
+@if (Model.FurtherMathematics_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.FurtherMathematics_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FurtherMathematics_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FurtherMathematics_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FurtherMathematics_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FurtherMathematics_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FurtherMathematics_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FurtherMathematics_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FurtherMathematics_TotalScore)
+                </dd>
+
+    <hr />
+    
+}
+
+
+
+
+@if (Model.AgriculturalScience_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.AgriculturalScience_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AgriculturalScience_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AgriculturalScience_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AgriculturalScience_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AgriculturalScience_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AgriculturalScience_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AgriculturalScience_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AgriculturalScience_TotalScore)
+                </dd>
+
+    
+    
+    <hr />
+}
+
+
+@if (Model.FoodandNutrition_Attendance> 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.FoodandNutrition_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FoodandNutrition_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FoodandNutrition_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FoodandNutrition_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FoodandNutrition_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FoodandNutrition_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FoodandNutrition_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FoodandNutrition_TotalScore)
+                </dd>
+
+    
+    
+    <hr />
+    
+}
+
+@if (Model.TechnicalDrawing_Attendance> 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.TechnicalDrawing_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TechnicalDrawing_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TechnicalDrawing_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TechnicalDrawing_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TechnicalDrawing_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TechnicalDrawing_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TechnicalDrawing_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TechnicalDrawing_TotalScore)
+                </dd>
+
+    
+    
+    <hr />
+}
+
+
+@if (Model.VisualArt_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.VisualArt_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.VisualArt_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.VisualArt_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.VisualArt_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.VisualArt_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.VisualArt_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.VisualArt_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.VisualArt_TotalScore)
+                </dd>
+
+    
+    <hr />
+    
+}
+
+
+@if (Model.HomeEconomics_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.HomeEconomics_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HomeEconomics_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HomeEconomics_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HomeEconomics_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HomeEconomics_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HomeEconomics_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HomeEconomics_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HomeEconomics_TotalScore)
+                </dd>
+    
+    <hr />
+}
+
+
+@if (Model.Music_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Music_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Music_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Music_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Music_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Music_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Music_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Music_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Music_TotalScore)
+                </dd>
+    <hr />
+
+}
+
+@if (Model.Economics_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Economics_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Economics_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Economics_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Economics_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Economics_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Economics_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Economics_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Economics_TotalScore)
+                </dd>
+    <hr />
+    
+}
+
+@if (Model.Geography_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Geography_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Geography_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Geography_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Geography_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Geography_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Geography_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Geography_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Geography_TotalScore)
+                </dd>
+    
+    <hr />
+}
+
+@if (Model.FinancialAccounting_Attendance> 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.FinancialAccounting_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FinancialAccounting_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FinancialAccounting_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FinancialAccounting_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FinancialAccounting_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FinancialAccounting_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FinancialAccounting_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FinancialAccounting_TotalScore)
+                </dd>
+
+    <hr />
+}
+
+@if (Model.History_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.History_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.History_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.History_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.History_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.History_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.History_ExaminationScore)
+                </dd>
+
+    
+                <dt>
+                    @Html.DisplayNameFor(model => model.History_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.History_TotalScore)
+                </dd>
+    <hr />
+}
+
+@if (Model.BusinessStudies_Attendance > 0)
+
+                {
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BusinessStudies_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BusinessStudies_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BusinessStudies_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BusinessStudies_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BusinessStudies_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BusinessStudies_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BusinessStudies_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BusinessStudies_TotalScore)
+                </dd>
+
+    
+    <hr />
+}
+
+
+@if (Model.SocialStudies_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.SocialStudies_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SocialStudies_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SocialStudies_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SocialStudies_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SocialStudies_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SocialStudies_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SocialStudies_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SocialStudies_TotalScore)
+                </dd>
+    <hr />
+}
+
+
+@if (Model.Commerce_Attendance > 0)
+
+                {
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Commerce_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Commerce_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Commerce_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Commerce_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Commerce_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Commerce_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Commerce_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Commerce_TotalScore)
+                </dd>
+
+    
+    <hr />
+
+}
+
+@if (Model.Government_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Government_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Government_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Government_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Government_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Government_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Government_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Government_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Government_TotalScore)
+                </dd>
+
+    <hr />
+}
+
+@if (Model.ChristianReligiousKnowledge_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.ChristianReligiousKnowledge_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ChristianReligiousKnowledge_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ChristianReligiousKnowledge_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ChristianReligiousKnowledge_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ChristianReligiousKnowledge_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ChristianReligiousKnowledge_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ChristianReligiousKnowledge_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ChristianReligiousKnowledge_TotalScore)
+                </dd>
+
+    
+    <hr />
+}
+
+@if (Model.IslamicReligiousKnowledge_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.IslamicReligiousKnowledge_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IslamicReligiousKnowledge_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IslamicReligiousKnowledge_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IslamicReligiousKnowledge_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IslamicReligiousKnowledge_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IslamicReligiousKnowledge_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IslamicReligiousKnowledge_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IslamicReligiousKnowledge_TotalScore)
+                </dd>
+
+    <hr />
+
+}
+
+@if (Model.RoyalEnglish_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.RoyalEnglish_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RoyalEnglish_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RoyalEnglish_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RoyalEnglish_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RoyalEnglish_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RoyalEnglish_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.RoyalEnglish_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RoyalEnglish_TotalScore)
+                </dd>
+    <hr />
+    
+    
+}
+
+@if (Model.BasicScience_Attendance> 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicScience_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicScience_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicScience_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicScience_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicScience_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicScience_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicScience_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicScience_TotalScore)
+                </dd>
+
+    
+    <hr />
+    
+    
+}
+
+@if (Model.BasicTechnology_Attendance> 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicTechnology_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicTechnology_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicTechnology_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicTechnology_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicTechnology_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicTechnology_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BasicTechnology_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BasicTechnology_TotalScore)
+                </dd>
+
+    
+    <hr />
+
+}
+@if (Model.CivicEducation_Attendance > 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.CivicEducation_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CivicEducation_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CivicEducation_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CivicEducation_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CivicEducation_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CivicEducation_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CivicEducation_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CivicEducation_TotalScore)
+                </dd>
+
+    <hr />
+}
+
+@if (Model.CreativeArt_Attendance> 0)
+
+                {
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreativeArt_Attendance)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreativeArt_Attendance)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreativeArt_ContinuousAssessment)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreativeArt_ContinuousAssessment)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreativeArt_ExaminationScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreativeArt_ExaminationScore)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreativeArt_TotalScore)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreativeArt_TotalScore)
+                </dd>
+    
+    <hr />
+}
+    
+</fieldset>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ResultID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

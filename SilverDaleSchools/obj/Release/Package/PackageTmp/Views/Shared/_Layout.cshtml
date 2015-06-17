@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+
+@{
+
+    //http://stackoverflow.com/questions/12904266/twitter-bootstrap-hide-sub-menus-in-small-screens
+    //http://www.troyhunt.com/2013/09/the-complete-guide-to-loading-free-ssl.html
+    //
+
+
+
+    string UserName = User.Identity.Name;
+
+    bool ans = User.IsInRole("SuperAdmin");
+    //  List<SilverDaleSchools.Model.MyRole> theRole = null;
+    // theRole = Session["theRole"] as List<SilverDaleSchools.Model.MyRole>;
+
+}
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -School Managment</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+        .item {
+            border-radius: 15px;
+            width: 120px;
+            height: 120px;
+            background-color: #FFF;
+            margin: 10px;
+            float: left;
+            -webkit-box-shadow: 0 1px 3px #c3c3c3;
+            -moz-box-shadow: 0 1px 3px #c3c3c3;
+            box-shadow: 0 1px 3px #c3c3c3;
+            overflow: hidden;
+            -webkit-transition: box-shadow 0.2s ease-in-out;
+            -moz-transition: box-shadow 0.2s ease-in-out;
+            -o-transition: box-shadow 0.2s ease-in-out;
+            -ms-transition: box-shadow 0.2s ease-in-out;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        ul.nav li.dropdown:hover > ul.dropdown-menu {
+            display: block;
+        }
+
+        .ui-datepicker {
+            background-color: #333;
+            border: 1px solid #555;
+            color: #EEE;
+        }
+
+        body {
+            padding-top: 2px;
+            padding-bottom: 40px;
+            /*background-color:  #aecbcc;*/
+            background-color: #ebb4e2;
+            /*background-image: url(../images/background.jpg);*/
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+
+        fieldset {
+            border: 1px solid #000;
+            padding: 0 1.4em 1.4em 1.4em;
+            margin: 0 0 1.5em 0;
+        }
+
+        #ta {
+            background-color: #000;
+            /*background-color: #333;*/
+        }
+
+
+
+        #head {
+            background-color: #10176b;
+            /*background-color: #333;*/
+        }
+
+        .hero-unit {
+            background-color: #aecbcc;
+            /*background-color: #9dc0c2;*/
+        }
+
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        fieldset legend {
+            display: inline;
+        }
+
+        hr {
+            border: 1px solid #000;
+        }
+
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class=" col-sm-1">
+
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <img src="" id="imagechange" alt="image 3" width="50px" height="50px">
+                    </div>
+                </div>
+                <div class="col-sm-11">
+                    <div class="navbar-collapse">
+
+                        <ul class="nav navbar-nav nav-tabs">
+                            <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+                            @*<li>@Html.ActionLink("ABOUT", "About", "Home")</li>
+                                <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>*@
+
+
+
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="dropdownCommonMenu4" data-toggle="dropdown">DISCUSSION</a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCommonMenu4">
+
+
+                                        <li role="menuitem">
+                                        <li role="menuitem">@Html.ActionLink("Discussion Blog", "Index", "Post")</li>
+                                        <li role="menuitem" class="divider"></li>
+
+                                    </ul>
+                                </li>
+                            }
+
+                            @if (Request.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                            {
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="dropdownCommonMenu2" data-toggle="dropdown">COURSE</a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCommonMenu2">
+
+                                        <li role="menuitem">@Html.ActionLink("View Courses", "Index", "Subject")</li>
+
+                                        <li role="menuitem" class="divider"></li>
+                                        <li role="menuitem">
+                                        <li>@Html.ActionLink("Create Course", "Create", "Subject", null, new { id = 0 })</li>
+                                        <li role="menuitem" class="divider"></li>
+                                    
+                                        <li role="menuitem">@Html.ActionLink("View Assgined Course", "Index", "SubjectRegistration")</li>
+                                        <li role="menuitem" class="divider"></li>
+                                        <li role="menuitem">@Html.ActionLink("Assgin Course", "Create", "SubjectRegistration")</li>
+                                    </ul>
+                                </li>
+                            }
+
+                            @if (Request.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                            {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownCommonMenu2" data-toggle="dropdown">MEMBERS</a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCommonMenu2">
+
+                                    <li role="menuitem">@Html.ActionLink("View Members", "Index", "Staff")</li>
+
+                                    <li role="menuitem" class="divider"></li>
+                                    <li role="menuitem">
+                                    <li>@Html.ActionLink("Create Members", "Create", "Staff", null, new { id = 0 })</li>
+                                    <li role="menuitem" class="divider"></li>
+                                </ul>
+                            </li>
+                            }
+
+
+                            @if (Request.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                            {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownCommonMenu13" data-toggle="dropdown">ADMIN</a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownCommonMenu13">
+                                    <li role="menuitem">@Html.ActionLink("View Admin", "Index", "UserAdministration")</li>
+                                    <li role="menuitem" class="divider"></li>
+
+
+                                </ul>
+                            </li>
+                            }
+
+
+
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+
+                <div class="col-md-3">
+                    <br />
+                    @*<h2><a class="btn btn-primary btn-large" href="#"><b> INFORMATION      BOARD</b> </a></h2>*@
+
+                    @*<div class="wrapper">
+                            <div class="accordian1">
+                            </div>
+                        </div>*@
+
+                </div>
+
+                <div class="col-md-9">
+
+                    <br />
+                    <br />
+                    @RenderBody()
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <hr />
+            <footer id="foot">
+                @*<p><h6>&copy; @DateTime.Now.Year -<b>Virtual<em>K</em>alone</b></h6></p>*@
+            </footer>
+        </div>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+    <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+    @*<script src="~/Scripts/jquery-ui-1.10.3.custom.min.js"></script>*@
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <link href="~/Content/themes/excite-bike/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.backstretch.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+        $('.accordian1').empty();
+        $.get('@Url.Action("LoadNewBoard", "NewsBoard")', { level: "2" }, function (data) {
+            var header = "";
+            var counter = 0;
+            var initialHeader = "";
+            var tracker = "0";
+
+            for (var i = 0; i < data.length; i++) {
+
+                counter = counter + 1;
+                if (tracker == "0") {
+                    header = '<h3><a href="#">' + data[i].Text + '</a></h3>';
+                    tracker = 1;
+                }
+                if (tracker == "1") {
+                    header = '<h3><a href="#">' + data[i].Text + '</a></h3>';
+                    header = header + '<div>' + data[i].Value + '</div>';
+                    $('.accordian1').append(header).accordion('destroy').accordion({ active: 'false', clearStyle: true, autoHeight: false }).css({ padding: "1px 1px 1px 0px" });
+
+                    /// $('.accordian1').append(header).accordion('destroy').accordion({ active: 'false', clearStyle: true, autoHeight: false }).$('.accordion .ui-accordion-header a').css({ padding: "1px 1px 1px 30px" });
+                }
+
+
+            }
+
+            //  }
+
+        });
+
+
+
+        var images = [];
+        images[0] = "/Images/images (51).jpg";
+        images[1] = "/Images/images (44).jpg";
+        images[2] = "/Images/images (48).jpg";
+        //images[3] = "/Images/images (3).jpg";
+        //images[4] = "/Images/images (4).jpg";
+        //images[5] = "/Images/images (5).jpg";
+        //images[6] = "/Images/images (6).jpg";;
+        //images[7] = "/Images/images (7).jpg";;
+        //images[8] = "/Images/images (8).jpg";;
+        //images[9] = "/Images/images (9).jpg";;
+        //images[10] = "/Images/images.jpg";
+
+        //images[11] = "/Images/images (11).jpg";;
+        //images[12] = "/Images/images (12).jpg";;
+        //images[13] = "/Images/images (13).jpg";;
+        //images[14] = "/Images/images (14).jpg";;
+        //images[15] = "/Images/images (15).jpg";;
+        //images[16] = "/Images/images (16).jpg";;
+        //images[17] = "/Images/images (17).jpg";;
+        //images[18] = "/Images/images (18).jpg";;
+        //images[19] = "/Images/images (20).jpg";
+        //images[20] = "/Images/images (22).jpg";
+        //images[21] = "/Images/images (1).jpg";
+
+        //images[22] = "/Images/download (40).jpg";
+        //images[23] = "/Images/download (41).jpg";
+        //images[24] = "/Images/download (42).jpg";
+        //images[25] = "/Images/images (43).jpg";
+        //images[26] = "/Images/images (44).jpg";
+        //images[27] = "/Images/images (45).jpg";
+        //images[28] = "/Images/images (46).jpg";
+        //images[29] = "/Images/images (47).jpg";
+        //images[30] = "/Images/images (48).jpg";
+        //images[31] = "/Images/images (49).jpg";
+        //images[32] = "/Images/images (50).jpg";
+        //images[33] = "/Images/images (51).jpg";
+        //images[34] = "/Images/images (52).jpg";
+
+        var size = images.length
+        var x = Math.floor(size * Math.random())
+        $('#imagechange').fadeIn(100, function () {
+            $(this).attr('src', images[x]).fadeIn(100);
+        })
+
+        var i = 0;
+        setInterval(fadeDivs, 10000);
+
+        function fadeDivs() {
+            i = i < images.length ? i : 0;
+            var size = images.length
+            var x = Math.floor(size * Math.random())
+            $('#imagechange').fadeIn(100, function () {
+                $(this).attr('src', images[x]).fadeIn(100);
+            })
+            i++;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+﻿@*@model IEnumerable<SilverDaleSchools.Model.Student>*@
+@model PagedList.IPagedList<SilverDaleSchools.Model.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    if (!(Request.IsAuthenticated && HttpContext.Current.User.IsInRole("Student") || (Request.IsAuthenticated && HttpContext.Current.User.IsInRole("Parent"))))
+    {
+        <fieldset>
+            <legend>Search Box</legend>
+
+            <table>
+
+                @*<tr>
+
+                    <td>
+                        <b>Approved:</b>
+                    </td>
+                    <td>
+                        @Html.DropDownList("ApprovedString", SilverDaleSchools.Model.LevelDictionary.Approved)
+                    </td>
+                </tr>*@
+
+                <tr>
+
+                    <td>
+                        <b>Find by Sex: </b>
+                    </td>
+                    <td>
+                        @Html.DropDownList("SexString", SilverDaleSchools.Model.SexDictionary.SexDicoList)
+                        &nbsp;
+
+                    </td>
+                </tr>
+
+                <tr>
+
+                                            
+                @*<tr>
+
+                    <td>
+                        <b>Find by Class:</b>
+                    </td>
+                    <td>
+                        @Html.DropDownList("LevelString", SilverDaleSchools.Model.LevelDictionary.LevelDicoList)
+                    </td>
+                </tr>*@
+
+                @*<tr>
+
+                    <td>
+                        <b>Class Arm:</b>
+                    </td>
+                    <td>
+                        @Html.DropDownList("arm", new SelectList((System.Collections.IEnumerable)ViewData["arm"], "Value", "Text"))
+                    </td>
+                </tr>*@
+
+
+
+
+                <tr>
+
+                    <td>
+                        <b>Find by name:</b>
+                    </td>
+                    <td>
+                        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string) &nbsp;
+                    </td>
+                </tr>
+
+
+                <tr>
+
+
+                    <td>
+                        <b>Find by Student ID:</b>
+                    </td>
+                    <td>
+                        @Html.TextBox("StudentIDString", ViewBag.CurrentFilter as string)
+                        &nbsp;
+                    </td>
+                </tr>
+            
+
+
+            </table>
+            <input type="submit" value="Search" id="button" class="btn-primary" />
+            <br />
+        </fieldset>
+
+    }
+
+
+}
+
+<fieldset>
+    <legend>STUDENT LIST  @ViewBag.Count Record(s) Found</legend>
+
+
+    <table class="table-striped  table-condensed table-responsive table-hover tab-pane  ">
+        <tr>
+            <th>
+                <b>Student ID</b>
+            </th>
+            <th>
+               <b>First Name</b>
+            </th>
+
+            <th>
+                <b>Middle Name</b>
+            </th>
+            <th>
+                <b>Last Name</b>
+            </th>
+           
+            <th>
+               <b>Sex</b>
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ParentName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ParentAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ParentPhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LGAName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StateName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CountryName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LocalLanguageName)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Middle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ParentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ParentAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ParentPhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LGAName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StateName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CountryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LocalLanguageName)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentID }) 
+                    @*@Html.ActionLink("Delete", "Delete", new {  id=item.StudentID })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+    <table>
+        <tr>
+            <td>
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+                of @Model.PageCount
+                &nbsp;
+            </td>
+            @if (Model.HasPreviousPage)
+            {
+                <td>
+                    @Html.ActionLink("<<", "Index", new { page = 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+                </td>
+                @Html.Raw("&nbsp;")
+                <td>
+                    @Html.ActionLink("< Prev", "Index", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+                </td>
+            }
+            else
+            {
+                <td>
+                    <<
+                </td>
+                <td>
+                    @Html.Raw("&nbsp;")
+                    < Prev
+                </td>
+            }
+            &nbsp;
+            @if (Model.HasNextPage)
+            {
+                <td>
+                    @Html.ActionLink("Next >", "Index", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+                </td>
+                <td>
+                    @Html.Raw("&nbsp;")
+                </td>
+                <td>
+                    @Html.ActionLink(">>", "Index", new { page = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+                </td>
+            }
+            else
+            {
+                <td>
+                    Next >
+                </td>
+                <td>
+                    @Html.Raw("&nbsp;")
+                </td>
+                <td>
+                    >>
+                </td>
+            }
+        </tr>
+    </table>
+    </fieldset>

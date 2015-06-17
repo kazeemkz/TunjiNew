@@ -1,0 +1,272 @@
+﻿@*@model IEnumerable<SilverDaleSchools.Model.Staff>*@
+@model PagedList.IPagedList<SilverDaleSchools.Model.Person>
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<h4>STAFF LIST</h4>*@
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Search Box</legend>
+
+        <table>
+
+           
+            <tr>
+
+                <td>
+                    <b>Find by Sex: </b>
+                </td>
+                <td>
+                    @Html.DropDownList("SexString", SilverDaleSchools.Model.SexDictionary.SexDicoList)
+                    &nbsp;
+
+                </td>
+            </tr>
+
+            <tr>
+
+
+                <td>
+                    <b>Find by Role:</b>
+                </td>
+                <td>
+                    @Html.DropDownList("role", new SelectList((System.Collections.IEnumerable)ViewData["Role"], "Value", "Text"))
+                    &nbsp;
+                </td>
+            </tr>
+
+            <tr>
+
+                <td>
+                    <b>Find by name:</b>
+                </td>
+                <td>
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string) &nbsp;
+                </td>
+            </tr>
+
+
+            <tr>
+
+
+                <td>
+                    <b>Find by Staff ID:</b>
+                </td>
+                <td>
+                    @Html.TextBox("StudentIDString", ViewBag.CurrentFilter as string)
+                    &nbsp;
+                </td>
+            </tr>
+
+
+        </table>
+        <input type="submit" value="Search" id="button" class="btn-primary" />
+        <br />
+    </fieldset>
+
+}
+
+<fieldset>
+    <legend>STAFF LIST  @ViewBag.Count Record(s) Found</legend>
+
+
+    <table class="table-striped  table-condensed table-responsive table-hover tab-pane  ">
+        <tr>
+            <th>
+                <b>User ID</b>
+            </th>
+            <th>
+                <b>First Name</b>
+            </th>
+            <th>
+                <b>Last Name</b>
+            </th>
+          
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Middle)
+                </th>*@
+
+            <th>
+                <b>Sex</b>
+            </th>
+            <th>
+                <b>Role</b>
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.EnrollmentDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DOB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BloodGroup)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genotype)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Disability)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApprovedUserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateApproved)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlaceOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telephone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubjectStrength)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassTeacherOf)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HightestQualification)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+               
+
+
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Middle)
+                    </td>*@
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DOB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BloodGroup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genotype)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Disability)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApprovedUserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateApproved)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlaceOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telephone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubjectStrength)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClassTeacherOf)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HightestQualification)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PersonID }) |
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.StaffID })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+</fieldset>
+<table>
+    <tr>
+        <td>
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+            of @Model.PageCount
+            &nbsp;
+        </td>
+        @if (Model.HasPreviousPage)
+        {
+            <td>
+                @Html.ActionLink("<<", "Index", new { page = 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+            </td>
+            @Html.Raw("&nbsp;")
+            <td>
+                @Html.ActionLink("< Prev", "Index", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+            </td>
+        }
+        else
+        {
+            <td>
+                <<
+            </td>
+            <td>
+                @Html.Raw("&nbsp;")
+                < Prev
+            </td>
+        }
+        &nbsp;
+        @if (Model.HasNextPage)
+        {
+            <td>
+                @Html.ActionLink("Next >", "Index", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+            </td>
+            <td>
+                @Html.Raw("&nbsp;")
+            </td>
+            <td>
+                @Html.ActionLink(">>", "Index", new { page = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+            </td>
+        }
+        else
+        {
+            <td>
+                Next >
+            </td>
+            <td>
+                @Html.Raw("&nbsp;")
+            </td>
+            <td>
+                >>
+            </td>
+        }
+    </tr>
+</table>

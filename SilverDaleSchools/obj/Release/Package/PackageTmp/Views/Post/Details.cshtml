@@ -1,0 +1,107 @@
+﻿@model SilverDaleSchools.Model.Post
+
+@{
+    ViewBag.Title = "Details";
+    //Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+@{
+    SilverDaleSchools.DAL.UnitOfWork work = new SilverDaleSchools.DAL.UnitOfWork();
+    string UserName = User.Identity.Name;
+    //List<SchoolManagement.Model.MyRole> theRole = null;
+    List<SilverDaleSchools.Model.Person> thePerson = null;
+    SilverDaleSchools.Model.Person theRealPerson = null;
+    //  SchoolManagement.Model.SecondarySchoolStudent theRealSecondarySchoolStudent = null;
+    SilverDaleSchools.Model.Person theRealPrimarySchoolStaff = null;
+    string teacherClass = null;
+    if (UserName != "")
+    {
+        int UserNameInt = Convert.ToInt32(UserName);
+
+        //List<SchoolManagement.Model.Person> thePerson = work.PersonRepository.Get(a => a.UserID == UserNameInt).ToList();
+
+        thePerson = work.PersonRepository.Get(a => a.UserID == UserNameInt).ToList();
+        theRealPerson = thePerson[0];
+        //  theRole = work.MyRoleRepository.Get(a => a.RoleName.Equals(theRealPerson.Role)).ToList();
+        //if (theRealPerson is SchoolManagement.Model.PrimarySchoolStaff)
+        //{
+
+        //    //theRealSecondarySchoolStudent = work.SecondarySchoolStudentRepository.GetByID(theRealPerson.PersonID);
+        //    theRealPrimarySchoolStaff = work.PrimarySchoolStaffRepository.GetByID(theRealPerson.PersonID);
+        //    if (theRealPrimarySchoolStaff.ClassTeacherOf != null)
+        //    {
+
+        //        string[] theClass = theRealPrimarySchoolStaff.ClassTeacherOf.Split(':');
+        //        if (theClass[0] != null)
+        //        {
+        //           teacherClass = theClass[0];
+
+        //        }
+
+
+        //    }
+        //}
+    }
+
+}
+
+
+@*<h2>Details</h2>*@
+
+<fieldset>
+    @{
+        string theDate = String.Format("{0:ddd, MMM d, yyyy, h:mm:ss tt}", Model.DateCreated);
+    }
+    <legend>Post Title -@Model.Title, by @Model.PosterName - @Model.RealName at  @theDate</legend>
+
+    @*<div class="display-label">
+             @Html.DisplayNameFor(model => model.PostBody)
+        </div>*@
+    <div class="display-field">
+        <b>@Html.DisplayFor(model => model.PostBody)</b>
+    </div>
+
+
+
+</fieldset>
+
+@foreach (var item in Model.Comments)
+{
+    <fieldset>
+        @{
+    string theDate2 = String.Format("{0:ddd, MMM d, yyyy, h:mm:ss tt}", item.DateCreated);
+        }
+        <legend>Comment Made by @item.Commenter (@item.Role) - @item.CommenterName at @theDate2</legend>
+        <div class="display-field">
+            @item.Content
+        </div>
+
+        @if (User.Identity.Name.Equals(Convert.ToString(item.Commenter)) || User.IsInRole("SuperAdmin"))
+        {
+            using (Html.BeginForm("Delete", "Comment", new { id = item.CommentID }, FormMethod.Post))
+            {
+                <input type="submit" value="Delete Comment" class="btn-primary" />
+            }
+        }
+    </fieldset>
+}
+
+@if (!(User.IsInRole("SuperAdmin")))
+{
+    using (Html.BeginForm("Create", "Comment", new { PostID = Model.PostID }, FormMethod.Post))
+    {
+        <fieldset>
+            <legend>Your Comment</legend>
+            @Html.TextArea("Commment")
+
+            <input type="submit" value="Submit Comment" class="btn-primary" />
+        </fieldset>
+
+    }
+}
+<p>
+
+    @Html.ActionLink("Back to List", "Index")
+    @* @Html.ActionLink("Edit", "Edit", new { id=Model.PostID }) |
+        @Html.ActionLink("Back to List", "Index")*@
+</p>

@@ -1,0 +1,100 @@
+﻿@model PagedList.IPagedList<SilverDaleSchools.Model.Subject>
+@{
+    ViewBag.Title = "Index";
+   // Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+<h4>SUBJECTS LIST</h4>
+
+<p id="button">
+    @Html.ActionLink("Create New  Subject", "Create")
+</p>
+<fieldset>
+    <legend>@Model.Count() Subject(s) In Total</legend>
+    <table class="table table-striped table-hover table-bordered table-condensed">
+        <tr>
+            <th>
+                <b>Name</b>
+            </th>
+            <th>
+                <b>Level</b>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>@*      @Html.ActionLink("Edit", "Edit", new { id = item.SubjectID }) |*@
+                    @*      @Html.ActionLink("Details", "Details", new { id = item.SubjectID }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SubjectID })
+                </td>
+            </tr>
+        }
+    </table>
+</fieldset>
+<table >
+    <tr>
+        <td>Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+            of @Model.PageCount
+            &nbsp;
+        </td>
+        @if (Model.HasPreviousPage)
+        {
+            <td>
+                @Html.ActionLink("<<", "Index", new { page = 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+            </td>
+            @Html.Raw("&nbsp;")
+            <td>
+                @Html.ActionLink("< Prev", "Index", new { page = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+            </td>
+        }
+        else
+        {
+            <td><<
+            </td>
+            <td>
+                @Html.Raw("&nbsp;")
+        < Prev
+            </td>
+        }
+        &nbsp;
+    @if (Model.HasNextPage)
+    {
+        <td>
+            @Html.ActionLink("Next >", "Index", new { page = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        </td>
+        <td>
+            @Html.Raw("&nbsp;")
+        </td>
+        <td>
+            @Html.ActionLink(">>", "Index", new { page = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        </td>
+    }
+    else
+    {
+        <td>Next >
+        </td>
+        <td>
+            @Html.Raw("&nbsp;")
+        </td>
+        <td>>>
+        </td>
+    }
+    </tr>
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+       // $("#button").button();
+
+    </script>
+}
+

@@ -1,0 +1,38 @@
+﻿@*@model SchoolManagement.Model.SubjectRegistration
+@{
+    ViewBag.Title = "Delete";
+    //Layout = "~/Views/Shared/_Layout.mobile.cshtml";
+}
+
+<h4>DELETE SUBJECTS ASSIGNED TO @Model.Level</h4>
+<br />
+<h3>Are you sure you want to delete class subjects for @Model.Level?</h3>
+<fieldset>
+    <legend>@Model.Level</legend>
+
+
+    <div class="display-field">
+        <b>Class:</b>   @Html.DisplayFor(model => model.Level)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+     @Html.HiddenFor(model => model.SubjectRegistrationID)
+    <div id="button2">
+          @Html.ActionLink("Back to List", "Index")
+    </div>
+    <p>
+        <input type="submit" value="Delete" id="button" class="btn-primary" />
+           
+    </p>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        //$("#button").button();
+        //$("#button2").button();
+
+    </script>
+}*@
+

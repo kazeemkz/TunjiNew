@@ -1,0 +1,40 @@
+﻿@model SilverDaleSchools.Model.NewsBoard
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>NEWS BOARD DETAILS</h4>
+
+<fieldset>
+    <legend>NewsBoard</legend>
+
+    @*<div class="display-label">
+    </div>
+    <div class="display-field">
+        <b>@Html.DisplayNameFor(model => model.Caption)</b> @Html.DisplayFor(model => model.Caption)
+    </div>*@
+    <fieldset>
+
+        <legend>@Html.DisplayFor(model => model.Caption) at  @Html.DisplayFor(model => model.Date)</legend>
+        @Html.DisplayFor(model => model.Content)
+    </fieldset>
+
+    @* <div class="display-label">
+         @Html.DisplayNameFor(model => model.Content)
+    </div>
+    <div class="display-field">
+       
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>*@
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NewsBoardID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
