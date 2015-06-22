@@ -65,3 +65,25 @@ C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools
 C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\obj\Debug\SilverDaleSchools.DAL.csprojResolveAssemblyReference.cache
 C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\obj\Debug\SilverDaleSchools.DAL.dll
 C:\Users\kazeem\Desktop\School Projects\Tunji Abuad\silverdale\SilverDaleSchools.DAL\obj\Debug\SilverDaleSchools.DAL.pdb
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\SilverDaleSchools.DAL.dll.config
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\SilverDaleSchools.DAL.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\SilverDaleSchools.DAL.pdb
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\EntityFramework.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\log4net.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\MvcMembership.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\PagedList.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\Remotion.Data.Linq.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\Remotion.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\Remotion.Interfaces.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\SilverDaleSchools.Model.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\System.Web.Providers.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\SilverDaleSchools.Model.pdb
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\EntityFramework.xml
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\MvcMembership.pdb
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\MvcMembership.xml
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\bin\Debug\PagedList.xml
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\obj\Debug\SilverDaleSchools.DAL.csprojResolveAssemblyReference.cache
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\obj\Debug\SilverDaleSchools.DAL.dll
+C:\Users\kazeem\Desktop\School Projects\TunjiNew\SilverDaleSchools.DAL\obj\Debug\SilverDaleSchools.DAL.pdb

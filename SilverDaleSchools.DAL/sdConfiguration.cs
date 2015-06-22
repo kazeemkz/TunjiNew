@@ -65,6 +65,7 @@
                 theStaff.LastName = "ariyoo";
                 theStaff.MiddleName = "ariyoo";
                 theStaff.UserID = 5000001;
+                theStaff.Password = "ariyoo";
               //  theStaff.DOB = DateTime.Now;
                 theStaff.Sex = "Male";
                 theStaff.Role = "SuperAdmin";
@@ -86,6 +87,7 @@
              theStaff.FirstName = "Tunji";
              theStaff.LastName = "Tunji";
              theStaff.MiddleName = "Tunji";
+             theStaff.Password = "tunji1";
              theStaff.UserID = 5000002;
             // theStaff.DOB = DateTime.Now;
              theStaff.Sex = "Male";
